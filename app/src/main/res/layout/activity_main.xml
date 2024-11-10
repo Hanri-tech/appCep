@@ -55,4 +55,30 @@
             android:paddingTop="49px" />
     </LinearLayout>
 
+    <!-- Footer -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:background="#FF6750A4"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Desenvolvido por: Hanri Santiago"
+            android:textSize="14sp"
+            android:textColor="#FFFFFF" />
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="8dp"
+            android:src="@drawable/ic_linkedin"
+            android:contentDescription="LinkedIn"
+            android:onClick="openLinkedInProfile"/>
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,6 +2,8 @@
 package com.example.appcep;
 
 import android.app.Application;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -35,6 +37,21 @@ public class MainActivity extends AppCompatActivity {
         btnCep =  findViewById(R.id.btnCep);
         lblReposta =  findViewById(R.id.lblRetorno);
 
+        buscarCep();
+
+
+
+
+    }
+
+    public void openLinkedInProfile(View view) {
+        String linkedInUrl = "https://www.linkedin.com/in/hanri-santiago-1568a9146";
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(linkedInUrl));
+        startActivity(intent);
+    }
+
+
+    private void buscarCep() {
         btnCep.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
