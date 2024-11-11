@@ -5,34 +5,34 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context=".MainActivity">
 
+    <!-- Footer -->
     <LinearLayout
         android:id="@+id/cep"
-        android:layout_width="383dp"
-        android:layout_height="463dp"
+        android:layout_width="313dp"
+        android:layout_height="156dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="170dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintHorizontal_bias="0.462"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.878">
+        app:layout_constraintVertical_bias="0.398">
 
         <TextView
             android:id="@+id/textView4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="serif"
-            android:gravity="center"
-            android:paddingBottom="40px"
             android:text="CEP"
             android:textColor="#673AB7"
             android:textColorLink="#673AB7"
-            android:textSize="30sp" />
+            android:textSize="23sp" />
 
         <EditText
             android:id="@+id/txtCep"
@@ -48,37 +48,56 @@
             android:layout_height="wrap_content"
             android:text="Consultar" />
 
-        <TextView
-            android:id="@+id/lblRetorno"
-            android:layout_width="match_parent"
-            android:layout_height="219dp"
-            android:paddingTop="49px" />
     </LinearLayout>
 
-    <!-- Footer -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="16dp"
         android:background="#FF6750A4"
         android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent">
+        android:orientation="horizontal"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="1dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Desenvolvido por: Hanri Santiago"
-            android:textSize="14sp"
-            android:textColor="#FFFFFF" />
+            android:textColor="#FFFFFF"
+            android:textSize="14sp" />
 
         <ImageView
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_marginStart="8dp"
-            android:src="@drawable/ic_linkedin"
             android:contentDescription="LinkedIn"
-            android:onClick="openLinkedInProfile"/>
+            android:onClick="openLinkedInProfile"
+            android:src="@drawable/ic_linkedin" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/divCard"
+        android:layout_width="310dp"
+        android:layout_height="147dp"
+        android:background="@drawable/rounded_card"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cep"
+        android:layout_marginBottom="24dp"
+        android:layout_marginTop="31dp">
+
+        <TextView
+            android:id="@+id/lblRetorno"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="serif"
+            android:paddingStart="30dp"
+            android:paddingTop="10dp"
+            android:text="TextView"
+            android:textColor="#FDFCFC" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

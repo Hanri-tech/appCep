@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText txtCep;
     private Button btnCep;
     private TextView lblReposta;
+    private View viewById;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,12 +37,9 @@ public class MainActivity extends AppCompatActivity {
         txtCep =  findViewById(R.id.txtCep);
         btnCep =  findViewById(R.id.btnCep);
         lblReposta =  findViewById(R.id.lblRetorno);
+        viewById = findViewById(R.id.divCard);
 
         buscarCep();
-
-
-
-
     }
 
     public void openLinkedInProfile(View view) {
@@ -88,7 +86,18 @@ public class MainActivity extends AppCompatActivity {
                                     stringBuffer.append("\n");
                                     stringBuffer.append("DD: ");
                                     stringBuffer.append(data.getDdd());
-                                    lblReposta.setText(stringBuffer.toString());
+
+                                    TextView lblRetorno = findViewById(R.id.lblRetorno);
+
+                                    if (!lblRetorno.getText().toString().isEmpty() || lblRetorno.getText() != null){
+                                        lblRetorno.setText(stringBuffer.toString());
+                                        lblRetorno.setVisibility(View.VISIBLE);
+                                        viewById.setVisibility(View.VISIBLE);
+                                    }else {
+                                        lblRetorno.setVisibility(View.GONE);
+                                        viewById.setVisibility(View.GONE);
+                                    }
+
                                 } else {
                                     Toast.makeText(getApplicationContext(), "Erro ao buscar o CEP", Toast.LENGTH_LONG).show();
                                 }
